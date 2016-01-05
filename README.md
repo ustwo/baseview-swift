@@ -1,4 +1,5 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/ustwo/baseview-swift/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/ustwo/baseview-swift.svg?branch=master)](https://travis-ci.org/ustwo/baseview-swift)
 
 # BaseView
 
