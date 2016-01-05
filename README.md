@@ -1,65 +1,74 @@
-### BaseView
+# BaseView
 
-UIView subclass to abstract Base functionality for iOS
+The BaseView framework provides an organizational tool for writing custom views using `UIKit`. This framework is written using Swift 2.1. It has been developed and used by iOS developers at [ustwo](ustwo.com).
 
-### Dependencies 
+## Dependencies
 
 * [Xcode](https://itunes.apple.com/gb/app/xcode/id497799835?mt=12#)
 
-### Installation
+## Installation
 
-- Add the BaseView.h and UIView+BaseView.m files to your Xcode project.
+- Add the `BaseView.swift` file to your Xcode project.
 
-### Usage
+## Usage
 
-Use the BaseView as a base for all your custom UIViews's and take advantage overriding the same methods for your setup code e.g.
+Use the `BaseView` as a base class for all your custom views. Then override our common setup functions and have them automatically called as part of the initialization.
 
-    - (void)setup
-    {
-    	[super setup]; // Note. if you miss this the compiler warns you
+`BaseView` itself is a subclass of `UIView`. It contains three empty setup functions that are called by both `init(frame:)` and `awakeFromNib()`. These commonly used setup functions are `setup()`, `setupConstraints()`, and `setupAccessibility()` and are called in that order.
 
-    	self.backgroundColor = [UIColor redColor];
-    	
-		// Title label
-		
-    	self.titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    	[self addSubview:self.titleLabel];
-    }
-    
-	- (void)setupConstraints
-	{
-    	[super setupConstraints]; // Note. if you miss this the compiler warns you
-    
-	    // Title label
-	    
-	    [self addConstraint:
-	     [NSLayoutConstraint constraintWithItem:self.titleLabel
-	                                  attribute:NSLayoutAttributeLeft
-	                                  relatedBy:NSLayoutRelationEqual
-	                                     toItem:self
-	                                  attribute:NSLayoutAttributeLeft
-	                                 multiplier:1.0
-	                                   constant:0.0]];
-	    
-	    [self addConstraint:
-	     [NSLayoutConstraint constraintWithItem:self.titleLabel
-	                                  attribute:NSLayoutAttributeRight
-	                                  relatedBy:NSLayoutRelationEqual
-	                                     toItem:self
-	                                  attribute:NSLayoutAttributeRight
-	                                 multiplier:1.0
-	                                   constant:0.0]];
-	    
-	    [self addConstraint:
-	     [NSLayoutConstraint constraintWithItem:self.titleLabel
-	                                  attribute:NSLayoutAttributeTop
-	                                  relatedBy:NSLayoutRelationEqual
-	                                     toItem:self
-	                                  attribute:NSLayoutAttributeTop
-	                                 multiplier:1.0
-	                                   constant:0.0]];
-	}
+## Examples
 
-### Team
+Here are some example implementations of using the three setup functions in practice. In all of the examples we call `super` on the setup function, but do this as appropriate in your own code.
+
+We use `titleLabel` throughout our examples. We assume that this has been added as a `UILabel` property to the custom view.
+
+### setup
+
+Use the `setup()` function to initialize and subviews, set default values, etc.
+
+```swift
+override func setup() {
+  super.setup()
+
+  backgroundColor = UIColor.redColor()
+
+  titleLabel = UILabel()
+  addSubview(titleLabel)
+}
+```
+
+### setupConstraints
+
+Use the `setupConstraints()` function to layout all the subviews.
+
+```swift
+override func setupConstraints() {
+  super.setupConstraints()
+
+  titleLabel.translatesAutoresizingMaskIntoConstraints = false
+
+  addConstraint(NSLayoutContaint(item: titleLabel, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1.0, constant: 0.0))
+  addConstraint(NSLayoutContaint(item: titleLabel, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1.0, constant: 0.0))
+  addConstraint(NSLayoutContaint(item: titleLabel, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Top, multiplier: 1.0, constant: 0.0))
+}
+```
+
+### setupAccessibility
+
+Use the `setupAccessibility()` function to add any `accessibilityIdentifier` for testing/debugging as well as any `accessibilityLabel` and `accessibilityHint` as appropriate for your users.
+
+```swift
+override func setupAccessibility {
+  super.setupAccessibility()
+
+  titleLabel.accessibilityIdentifier = "TITLE"
+}
+```
+
+## Credits
 
 * Developers: [Shagun Madhikarmi](mailto:shagun@ustwo.com), [Martin Stolz](mailto:martin@ustwo.com)
+
+## License
+
+BaseView is released under the MIT License.
