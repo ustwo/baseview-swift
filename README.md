@@ -41,7 +41,7 @@ override func setup() {
 
 ### setupConstraints
 
-Use the `setupConstraints()` function to layout all the subviews.
+Use the `setupConstraints()` function to add layout constraints for all the subviews.
 
 ```swift
 override func setupConstraints() {
@@ -59,6 +59,8 @@ override func setupConstraints() {
 
 Use the `setupAccessibility()` function to add any `accessibilityIdentifier` for testing/debugging as well as any `accessibilityLabel` and `accessibilityHint` as appropriate for your users.
 
+Note that it is best to use this for static identifiers that will not change at runtime. For dynamically generated identifiers or identifiers that will change over time, we recommend doing this in the view controller or view model as appropriate.
+
 ```swift
 override func setupAccessibility {
   super.setupAccessibility()
@@ -67,9 +69,10 @@ override func setupAccessibility {
 }
 ```
 
-## Credits
+## Contributors
 
-* Developers: [Shagun Madhikarmi](mailto:shagun@ustwo.com), [Martin Stolz](mailto:martin@ustwo.com)
+* [Shagun Madhikarmi](mailto:shagun@ustwo.com)
+* [Martin Stolz](mailto:martin@ustwo.com)
 
 ## License
 
