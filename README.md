@@ -74,6 +74,7 @@ override func setupAccessibility {
 ## Contributors
 
 * [Shagun Madhikarmi](mailto:shagun@ustwo.com)
+* [Aaron McTavish](mailto:aamct@ustwo.com)
 * [Martin Stolz](mailto:martin@ustwo.com)
 
 ## License
