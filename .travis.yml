@@ -30,3 +30,7 @@ script:
     else
       xcodebuild -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration ReleaseTest ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
     fi
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+  - sleep 5
