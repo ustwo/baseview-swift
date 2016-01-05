@@ -14,29 +14,37 @@ import XCTest
 class BaseViewTests: XCTestCase {
     
     
-    // MARK: - Properties
-    
-    var viewController: ViewController!
-    
-    
-    // MARK: - Setup/Teardown
-    
-    override func setUp() {
-        super.setUp()
-        
-        viewController = ViewController()
-        
-        UIApplication.sharedApplication().keyWindow!.rootViewController = viewController
-        
-        // Test and Load the View at the Same Time!
-        XCTAssertNotNil(viewController.view)
-    }
-    
-    
     // MARK: - Tests
     
-    func testLoad() {
-        XCTAssertTrue(true)
+    func testAwakeFromNib() {
+        // Given
+        let testView = NSBundle.mainBundle().loadNibNamed("View", owner: self, options: nil).last as? View
+        
+        // Test
+        XCTAssertNotNil(testView)
+    }
+    
+    func testInitFromCoder() {
+        // Given
+        let testView = View()
+        
+        // When
+        let archive = NSKeyedArchiver.archivedDataWithRootObject(testView)
+        let result = NSKeyedUnarchiver.unarchiveObjectWithData(archive) as? View
+        
+        // Test
+        XCTAssertNotNil(result)
+    }
+    
+    func testInitWithFrame() {
+        // Given
+        let viewController = ViewController()
+        
+        // When
+        UIApplication.sharedApplication().keyWindow!.rootViewController = viewController
+        
+        // Test
+        XCTAssertNotNil(viewController.view)
     }
     
 }
