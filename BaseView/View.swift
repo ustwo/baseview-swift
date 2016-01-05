@@ -10,7 +10,7 @@ import UIKit
 
 class View: BaseView {
 
-    private (set) var titleLabel: UILabel!
+    private(set) var titleLabel: UILabel!
 
     
     // MARK: - Setup
