@@ -18,19 +18,20 @@ class BaseViewTests: XCTestCase {
     
     func testAwakeFromNib() {
         // Given
-        let testView = NSBundle.mainBundle().loadNibNamed("View", owner: self, options: nil).last as? View
+        let testView = NSBundle.mainBundle().loadNibNamed("BaseView", owner: self, options: nil).last as? BaseView
         
         // Test
         XCTAssertNotNil(testView)
+        XCTAssertTrue(testView!.isSetup)
     }
     
     func testInitFromCoder() {
         // Given
-        let testView = View()
+        let testView = BaseView()
         
         // When
         let archive = NSKeyedArchiver.archivedDataWithRootObject(testView)
-        let result = NSKeyedUnarchiver.unarchiveObjectWithData(archive) as? View
+        let result = NSKeyedUnarchiver.unarchiveObjectWithData(archive) as? BaseView
         
         // Test
         XCTAssertNotNil(result)
@@ -38,13 +39,11 @@ class BaseViewTests: XCTestCase {
     
     func testInitWithFrame() {
         // Given
-        let viewController = ViewController()
-        
-        // When
-        UIApplication.sharedApplication().keyWindow!.rootViewController = viewController
-        
-        // Test
-        XCTAssertNotNil(viewController.view)
+        let testView = BaseView(frame: CGRectZero)
+
+        // Then
+        XCTAssertNotNil(testView)
+        XCTAssertTrue(testView.isSetup)
     }
-    
 }
+
