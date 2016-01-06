@@ -43,6 +43,8 @@ import UIKit
         self.setup()
         self.setupAccessibility()
         self.setupConstraints()
+
+        self.isSetup = true
     }
     
     required init?(coder aDecoder: NSCoder) {
