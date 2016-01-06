@@ -72,12 +72,11 @@ import UIKit
     // MARK: - Setup
     
     /**
-    Setup for the view and all its subviews. 
+    Abstract setup method for initial setup of the view and all its subviews.
     
-    Note. Subclasses should override this method to setup their subviews
+    Override this function to initialize subviews, set default values, etc.
     */
     func setup() {
-
         // Abstract method.
     }
     
@@ -85,12 +84,13 @@ import UIKit
     // MARK: - Accessibility
     
     /**
-    Abstract setup method for the view's constraints.
+    Setup for the view's accessibility
     
-    Note. Subclasses should override this method to add layout constraints for their subviews here
+    Override this function to add accessibility to their subviews (e.g. `accesibilityIdentifier`, `accessibilityLabel`, `accessibilityHint`, etc.).
+    
+    - Note: It is best to use this for static identifiers that will not change at runtime. For dynamically generated identifiers or identifiers that will change over time, we recommend doing this in the view controller or view model as appropriate.
     */
     func setupAccessibility() {
-        
         // Abstract method.
     }
     
@@ -98,12 +98,11 @@ import UIKit
     // MARK: - Constraints
     
     /**
-    Setup for the view's accessibility
+    Abstract setup method for the view's constraints.
     
-    Note. Subclasses should override this method to add accessibility to their subviews
+    Override this function to add layout constraints for all the subviews.
     */
     func setupConstraints() {
-        
         // Abstract method.
     }
 }

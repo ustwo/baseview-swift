@@ -6,31 +6,45 @@
 //  Copyright (c) 2015 ustwo. All rights reserved.
 //
 
-import UIKit
 import XCTest
+
+@testable import BaseView
+
 
 class BaseViewTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    // MARK: - Tests
+    
+    func testAwakeFromNib() {
+        // Given
+        let testView = NSBundle.mainBundle().loadNibNamed("View", owner: self, options: nil).last as? View
+        
+        // Test
+        XCTAssertNotNil(testView)
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testInitFromCoder() {
+        // Given
+        let testView = View()
+        
+        // When
+        let archive = NSKeyedArchiver.archivedDataWithRootObject(testView)
+        let result = NSKeyedUnarchiver.unarchiveObjectWithData(archive) as? View
+        
+        // Test
+        XCTAssertNotNil(result)
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
+    func testInitWithFrame() {
+        // Given
+        let viewController = ViewController()
+        
+        // When
+        UIApplication.sharedApplication().keyWindow!.rootViewController = viewController
+        
+        // Test
+        XCTAssertNotNil(viewController.view)
     }
     
 }
