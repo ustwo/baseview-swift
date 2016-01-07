@@ -31,7 +31,9 @@ import UIKit
 */
 @objc class BaseView: UIView {
 
-    
+    private(set) var isSetup: Bool = false
+
+
     // MARK: - Initialisers
     
     override init(frame: CGRect) {
@@ -41,6 +43,8 @@ import UIKit
         self.setup()
         self.setupAccessibility()
         self.setupConstraints()
+
+        self.isSetup = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -51,10 +55,17 @@ import UIKit
     override func awakeFromNib() {
     
         super.awakeFromNib()
-        
-        self.setup()
-        self.setupAccessibility()
-        self.setupConstraints()
+
+        // Since awakeFromNib can be called multiple times we check to see if setup routines have been called already for safety
+
+        if !self.isSetup {
+
+            self.setup()
+            self.setupAccessibility()
+            self.setupConstraints()
+
+            self.isSetup = true
+        }
     }
     
     
