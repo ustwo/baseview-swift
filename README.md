@@ -2,9 +2,9 @@
 [![Build Status](https://travis-ci.org/ustwo/baseview-swift.svg?branch=master)](https://travis-ci.org/ustwo/baseview-swift)
 [![codecov.io](https://codecov.io/github/ustwo/baseview-swift/coverage.svg?branch=master)](https://codecov.io/github/ustwo/baseview-swift?branch=master)
 
-# BaseView
+# BaseViewSwift
 
-The BaseView framework provides an organizational tool for writing custom views using `UIKit`. This framework is written using Swift 2.1. It has been developed and used by iOS developers at [ustwo](ustwo.com).
+The BaseViewSwift framework provides an organizational tool for writing custom views using `UIKit`. This framework is written using Swift 2.1. It has been developed and used by iOS developers at [ustwo](ustwo.com).
 
 ## Dependencies
 
@@ -12,7 +12,33 @@ The BaseView framework provides an organizational tool for writing custom views 
 
 ## Installation
 
-- Add the `BaseView.swift` file to your Xcode project.
+### CocoaPods
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
+
+```bash
+$ gem install cocoapods
+```
+
+To integrate BaseViewSwift into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.3'
+use_frameworks!
+
+pod 'BaseViewSwift', '~> 1.0'
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
+
+### Manually
+
+If you prefer not to use either of the aforementioned dependency managers, you can integrate BaseViewSwift into your project manually. Add the `BaseView.swift` file from the `Sources` folder to your Xcode project.
 
 ## Usage
 
@@ -79,4 +105,4 @@ override func setupAccessibility {
 
 ## License
 
-BaseView is released under the MIT License. See the LICENSE file.
+BaseViewSwift is released under the MIT License. See the LICENSE file.
