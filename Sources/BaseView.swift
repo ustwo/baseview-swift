@@ -29,14 +29,14 @@ import UIKit
 /**
     BaseView acts as a common base for all custom views
 */
-@objc class BaseView: UIView {
+@objc public class BaseView: UIView {
 
-    private(set) var isSetup: Bool = false
+    public private(set) var isSetup: Bool = false
 
 
     // MARK: - Initialisers
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         
         super.init(frame: frame)
         
@@ -47,12 +47,12 @@ import UIKit
         self.isSetup = true
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         
         super.init(coder: aDecoder)
     }
     
-    override func awakeFromNib() {
+    override public  func awakeFromNib() {
     
         super.awakeFromNib()
 
@@ -76,7 +76,7 @@ import UIKit
     
     Override this function to initialize subviews, set default values, etc.
     */
-    func setup() {
+    public func setup() {
         // Abstract method.
     }
     
@@ -90,7 +90,7 @@ import UIKit
     
     - Note: It is best to use this for static identifiers that will not change at runtime. For dynamically generated identifiers or identifiers that will change over time, we recommend doing this in the view controller or view model as appropriate.
     */
-    func setupAccessibility() {
+    public func setupAccessibility() {
         // Abstract method.
     }
     
@@ -102,7 +102,7 @@ import UIKit
     
     Override this function to add layout constraints for all the subviews.
     */
-    func setupConstraints() {
+    public func setupConstraints() {
         // Abstract method.
     }
 }
