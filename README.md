@@ -97,6 +97,9 @@ override func setupAccessibility {
   titleLabel.accessibilityIdentifier = "TITLE"
 }
 ```
+## Contributing
+
+Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms. See the [Code of Conduct](https://github.com/ustwo/baseview-swift/blob/master/CODE_OF_CONDUCT) file
 
 ## Contributors
 
