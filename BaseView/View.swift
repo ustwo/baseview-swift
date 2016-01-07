@@ -35,6 +35,8 @@ class View: BaseView {
 
         super.setupConstraints()
         
+        self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         self.addConstraint(
             NSLayoutConstraint(item: self.titleLabel,
             attribute: NSLayoutAttribute.Left,
