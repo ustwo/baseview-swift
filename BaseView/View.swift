@@ -24,7 +24,7 @@ class View: BaseView {
         // Title label
 
         self.titleLabel = UILabel(frame: CGRectZero)
-        self.titleLabel!.text = "Some text"
+        self.titleLabel.text = "Some text"
         self.addSubview(self.titleLabel)
     }
 
