@@ -63,6 +63,7 @@ override func setup() {
   backgroundColor = UIColor.redColor()
 
   titleLabel = UILabel()
+  titleLabel.text = "Some text"
   addSubview(titleLabel)
 }
 ```

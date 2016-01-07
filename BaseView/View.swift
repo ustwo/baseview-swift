@@ -20,12 +20,10 @@ class View: BaseView {
         super.setup()
 
         self.backgroundColor = UIColor.redColor()
-        
-        // Title label
 
-        self.titleLabel = UILabel(frame: CGRectZero)
+        self.titleLabel = UILabel()
         self.titleLabel.text = "Some text"
-        self.addSubview(self.titleLabel)
+        self.addSubview(titleLabel)
     }
 
     
@@ -34,37 +32,11 @@ class View: BaseView {
     override func setupConstraints() {
 
         super.setupConstraints()
-        
+
         self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        self.addConstraint(
-            NSLayoutConstraint(item: self.titleLabel,
-            attribute: NSLayoutAttribute.Left,
-            relatedBy: NSLayoutRelation.Equal,
-            toItem: self,
-            attribute: NSLayoutAttribute.Left,
-            multiplier: 1.0,
-            constant: 0.0)
-        )
-        
-        self.addConstraint(
-            NSLayoutConstraint(item: self.titleLabel,
-                attribute: NSLayoutAttribute.Right,
-                relatedBy: NSLayoutRelation.Equal,
-                toItem: self,
-                attribute: NSLayoutAttribute.Right,
-                multiplier: 1.0,
-                constant: 0.0)
-        )
-        
-        self.addConstraint(
-            NSLayoutConstraint(item: self.titleLabel,
-                attribute: NSLayoutAttribute.Top,
-                relatedBy: NSLayoutRelation.Equal,
-                toItem: self,
-                attribute: NSLayoutAttribute.Top,
-                multiplier: 1.0,
-                constant: 0.0)
-        )
+
+        self.addConstraint(NSLayoutConstraint(item: self.titleLabel, attribute: .Left, relatedBy: .Equal, toItem: self.titleLabel.superview, attribute: .Left, multiplier: 1.0, constant: 0.0))
+        self.addConstraint(NSLayoutConstraint(item: self.titleLabel, attribute: .Right, relatedBy: .Equal, toItem: self.titleLabel.superview, attribute: .Right, multiplier: 1.0, constant: 0.0))
+        self.addConstraint(NSLayoutConstraint(item: self.titleLabel, attribute: .Top, relatedBy: .Equal, toItem: self.titleLabel.superview, attribute: .Top, multiplier: 1.0, constant: 0.0))
     }
 }
