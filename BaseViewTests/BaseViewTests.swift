@@ -18,7 +18,7 @@ class BaseViewTests: XCTestCase {
     
     func testAwakeFromNib() {
         // Given
-        let testView = NSBundle.mainBundle().loadNibNamed("BaseView", owner: self, options: nil).last as? BaseView
+        let testView = Bundle.main.loadNibNamed("BaseView", owner: self, options: nil)?.last as? BaseView
         
         // Test
         XCTAssertNotNil(testView)
@@ -30,8 +30,8 @@ class BaseViewTests: XCTestCase {
         let testView = BaseView()
         
         // When
-        let archive = NSKeyedArchiver.archivedDataWithRootObject(testView)
-        let result = NSKeyedUnarchiver.unarchiveObjectWithData(archive) as? BaseView
+        let archive = NSKeyedArchiver.archivedData(withRootObject: testView)
+        let result = NSKeyedUnarchiver.unarchiveObject(with: archive) as? BaseView
         
         // Test
         XCTAssertNotNil(result)
@@ -39,7 +39,7 @@ class BaseViewTests: XCTestCase {
     
     func testInitWithFrame() {
         // Given
-        let testView = BaseView(frame: CGRectZero)
+        let testView = BaseView(frame: CGRect.zero)
 
         // Then
         XCTAssertNotNil(testView)

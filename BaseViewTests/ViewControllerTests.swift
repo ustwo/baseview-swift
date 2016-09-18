@@ -20,7 +20,7 @@ class ViewControllerTests: XCTestCase {
         let viewController = ViewController()
 
         // When
-        UIApplication.sharedApplication().keyWindow!.rootViewController = viewController
+        UIApplication.shared.keyWindow!.rootViewController = viewController
 
         // Test
         XCTAssertNotNil(viewController.view)
