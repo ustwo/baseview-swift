@@ -29,9 +29,9 @@ import UIKit
 /**
     BaseView acts as a common base for all custom views
 */
-@objc public class BaseView: UIView {
+@objc open class BaseView: UIView {
 
-    public private(set) var isSetup: Bool = false
+    open fileprivate(set) var isSetup: Bool = false
 
 
     // MARK: - Initialisers
@@ -52,7 +52,7 @@ import UIKit
         super.init(coder: aDecoder)
     }
     
-    override public  func awakeFromNib() {
+    override open  func awakeFromNib() {
     
         super.awakeFromNib()
 
@@ -76,7 +76,7 @@ import UIKit
     
     Override this function to initialize subviews, set default values, etc.
     */
-    public func setup() {
+    open func setup() {
         // Abstract method.
     }
     
@@ -90,7 +90,7 @@ import UIKit
     
     - Note: It is best to use this for static identifiers that will not change at runtime. For dynamically generated identifiers or identifiers that will change over time, we recommend doing this in the view controller or view model as appropriate.
     */
-    public func setupAccessibility() {
+    open func setupAccessibility() {
         // Abstract method.
     }
     
@@ -102,7 +102,7 @@ import UIKit
     
     Override this function to add layout constraints for all the subviews.
     */
-    public func setupConstraints() {
+    open func setupConstraints() {
         // Abstract method.
     }
 }

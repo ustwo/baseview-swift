@@ -10,7 +10,7 @@ import UIKit
 
 class View: BaseView {
 
-    private(set) var titleLabel: UILabel!
+    fileprivate(set) var titleLabel: UILabel!
 
     
     // MARK: - Setup
@@ -19,7 +19,7 @@ class View: BaseView {
 
         super.setup()
 
-        self.backgroundColor = UIColor.redColor()
+        self.backgroundColor = UIColor.red
 
         self.titleLabel = UILabel()
         self.titleLabel.text = "Some text"
@@ -35,8 +35,8 @@ class View: BaseView {
 
         self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
 
-        self.addConstraint(NSLayoutConstraint(item: self.titleLabel, attribute: .Left, relatedBy: .Equal, toItem: self.titleLabel.superview, attribute: .Left, multiplier: 1.0, constant: 0.0))
-        self.addConstraint(NSLayoutConstraint(item: self.titleLabel, attribute: .Right, relatedBy: .Equal, toItem: self.titleLabel.superview, attribute: .Right, multiplier: 1.0, constant: 0.0))
-        self.addConstraint(NSLayoutConstraint(item: self.titleLabel, attribute: .Top, relatedBy: .Equal, toItem: self.titleLabel.superview, attribute: .Top, multiplier: 1.0, constant: 0.0))
+        self.addConstraint(NSLayoutConstraint(item: self.titleLabel, attribute: .left, relatedBy: .equal, toItem: self.titleLabel.superview, attribute: .left, multiplier: 1.0, constant: 0.0))
+        self.addConstraint(NSLayoutConstraint(item: self.titleLabel, attribute: .right, relatedBy: .equal, toItem: self.titleLabel.superview, attribute: .right, multiplier: 1.0, constant: 0.0))
+        self.addConstraint(NSLayoutConstraint(item: self.titleLabel, attribute: .top, relatedBy: .equal, toItem: self.titleLabel.superview, attribute: .top, multiplier: 1.0, constant: 0.0))
     }
 }
