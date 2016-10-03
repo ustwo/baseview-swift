@@ -27,80 +27,81 @@
 import UIKit
 
 /**
-    BaseView acts as a common base for all custom views
+ BaseView acts as a common base for all custom views
 */
 @objc open class BaseView: UIView {
 
-    open fileprivate(set) var isSetup: Bool = false
+    open fileprivate(set) var isSetup = false
 
 
     // MARK: - Initialisers
-    
-    override public init(frame: CGRect) {
-        
-        super.init(frame: frame)
-        
-        self.setup()
-        self.setupAccessibility()
-        self.setupConstraints()
 
-        self.isSetup = true
+    override public init(frame: CGRect) {
+
+        super.init(frame: frame)
+
+        setup()
+        setupAccessibility()
+        setupConstraints()
+
+        isSetup = true
     }
-    
+
     required public init?(coder aDecoder: NSCoder) {
-        
+
         super.init(coder: aDecoder)
     }
-    
+
     override open  func awakeFromNib() {
-    
+
         super.awakeFromNib()
 
         // Since awakeFromNib can be called multiple times we check to see if setup routines have been called already for safety
 
-        if !self.isSetup {
+        if !isSetup {
 
-            self.setup()
-            self.setupAccessibility()
-            self.setupConstraints()
+            setup()
+            setupAccessibility()
+            setupConstraints()
 
-            self.isSetup = true
+            isSetup = true
         }
     }
-    
-    
+
+
     // MARK: - Setup
-    
+
     /**
-    Abstract setup method for initial setup of the view and all its subviews.
-    
-    Override this function to initialize subviews, set default values, etc.
+     Abstract setup method for initial setup of the view and all its subviews.
+
+     Override this function to initialize subviews, set default values, etc.
     */
     open func setup() {
         // Abstract method.
     }
-    
-    
+
+
     // MARK: - Accessibility
-    
+
     /**
-    Setup for the view's accessibility
-    
-    Override this function to add accessibility to their subviews (e.g. `accesibilityIdentifier`, `accessibilityLabel`, `accessibilityHint`, etc.).
-    
-    - Note: It is best to use this for static identifiers that will not change at runtime. For dynamically generated identifiers or identifiers that will change over time, we recommend doing this in the view controller or view model as appropriate.
+     Setup for the view's accessibility
+
+     Override this function to add accessibility to their subviews (e.g. `accesibilityIdentifier`, `accessibilityLabel`, `accessibilityHint`, etc.).
+
+     - Note: It is best to use this for static identifiers that will not change at runtime.
+     For dynamically generated identifiers or identifiers that will change over time, we recommend doing this in the view controller or view model as appropriate.
     */
     open func setupAccessibility() {
         // Abstract method.
     }
-    
-    
+
+
     // MARK: - Constraints
-    
+
     /**
-    Abstract setup method for the view's constraints.
-    
-    Override this function to add layout constraints for all the subviews.
+     Abstract setup method for the view's constraints.
+
+     Override this function to add layout constraints for all the subviews.
     */
     open func setupConstraints() {
         // Abstract method.

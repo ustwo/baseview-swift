@@ -11,18 +11,22 @@ import XCTest
 @testable import BaseView
 
 class ViewControllerTests: XCTestCase {
-    
+
 
     // MARK: - Tests
 
     func testViewControllerLoadView() {
+
         // Given
+
         let viewController = ViewController()
 
         // When
+
         UIApplication.shared.keyWindow!.rootViewController = viewController
 
         // Test
+
         XCTAssertNotNil(viewController.view)
     }
 }
