@@ -60,7 +60,7 @@ Use the `setup()` function to initialize and subviews, set default values, etc.
 override func setup() {
   super.setup()
 
-  backgroundColor = UIColor.redColor()
+  backgroundColor = UIColor.red
 
   titleLabel = UILabel()
   titleLabel.text = "Some text"

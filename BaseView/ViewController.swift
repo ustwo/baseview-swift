@@ -9,13 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    
+
+
     // MARK: - View Lifecycle
-    
+
     override func loadView() {
         view = View()
     }
-
 }
-
