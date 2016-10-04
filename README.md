@@ -4,7 +4,7 @@
 
 # BaseViewSwift
 
-The BaseViewSwift framework provides an organizational tool for writing custom views using `UIKit`. This framework is written using Swift 2.1. It has been developed and used by iOS developers at [ustwo](ustwo.com).
+The BaseViewSwift framework provides an organizational tool for writing custom views using `UIKit`. This framework is written using Swift 3.0. It has been developed and used by iOS developers at [ustwo](ustwo.com).
 
 ## Dependencies
 
