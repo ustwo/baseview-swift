@@ -27,7 +27,7 @@ platform :ios, '8.3'
 
 use_frameworks!
 
-pod 'BaseViewSwift', :git => 'https://github.com/ustwo/baseview-swift.git', :tag => 'v1.0.0'
+pod 'BaseViewSwift', '~> 1.0.0'
 ```
 
 Then, run the following command:
