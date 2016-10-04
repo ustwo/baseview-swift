@@ -1,17 +1,19 @@
-Pod::Spec.new do |s|
-  s.name = 'BaseViewSwift'
-  s.version = '1.0.0'
-  s.license = 'MIT'
-  s.summary = 'An organizational tool for writing custom views using UIKit.'
-  s.homepage = 'https://github.com/ustwo/baseview-swift'
-  s.authors = { 'Shagun Madhikarmi' => 'shagun@ustwo.com',
-                'Aaron McTavish' => 'aamct@ustwo.com',
-                'Martin Stolz' => 'martin@ustwo.com' }
-  s.source = { :git => 'https://github.com/ustwo/baseview-swift.git', :tag => s.version }
-
-  s.ios.deployment_target = '8.3'
-
-  s.source_files = 'Sources/*.swift'
-
-  s.requires_arc = true
+Pod::Spec.new do |spec|
+  spec.name = 'BaseViewSwift'
+  spec.version = '0.3.1'
+  spec.license = 'MIT'
+  spec.summary = 'An organizational tool for writing custom views using UIKit.'
+  spec.homepage = 'https://github.com/ustwo/baseview-swift'
+  spec.authors = {
+    'Shagun Madhikarmi' => 'shagun@ustwo.com',
+    'Aaron McTavish' => 'aamct@ustwo.com',
+    'Martin Stolz' => 'martin@ustwo.com'
+  }
+  spec.source = {
+    :git => 'https://github.com/ustwo/baseview-swift.git',
+    :tag => spec.version
+  }
+  spec.ios.deployment_target = '8.3'
+  spec.source_files = 'Sources/*.swift'
+  spec.requires_arc = true
 end
