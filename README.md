@@ -24,6 +24,7 @@ To integrate BaseViewSwift into your Xcode project using CocoaPods, specify it i
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/ustwo/baseview-swift.git'
 platform :ios, '8.3'
 use_frameworks!
 
