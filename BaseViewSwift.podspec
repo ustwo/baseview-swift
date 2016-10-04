@@ -6,8 +6,7 @@ Pod::Spec.new do |spec|
   spec.homepage = 'https://github.com/ustwo/baseview-swift'
   spec.authors = {
     'Shagun Madhikarmi' => 'shagun@ustwo.com',
-    'Aaron McTavish' => 'aamct@ustwo.com',
-    'Martin Stolz' => 'martin@ustwo.com'
+    'Aaron McTavish' => 'aamct@ustwo.com'
   }
   spec.source = {
     :git => 'https://github.com/ustwo/baseview-swift.git',

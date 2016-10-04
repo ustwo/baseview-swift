@@ -106,7 +106,6 @@ Please note that this project is released with a Contributor Code of Conduct. By
 
 * [Shagun Madhikarmi](mailto:shagun@ustwo.com)
 * [Aaron McTavish](mailto:aamct@ustwo.com)
-* [Martin Stolz](mailto:martin@ustwo.com)
 
 ## License
 
