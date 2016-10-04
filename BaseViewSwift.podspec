@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'BaseViewSwift'
-  spec.version = '0.3.1'
+  spec.version = '1.0.0'
   spec.license = 'MIT'
   spec.summary = 'An organizational tool for writing custom views using UIKit.'
   spec.homepage = 'https://github.com/ustwo/baseview-swift'
