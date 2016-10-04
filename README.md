@@ -23,12 +23,11 @@ $ gem install cocoapods
 To integrate BaseViewSwift into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-source 'https://github.com/CocoaPods/Specs.git'
-source 'https://github.com/ustwo/baseview-swift.git'
 platform :ios, '8.3'
+
 use_frameworks!
 
-pod 'BaseViewSwift', '~> 1.0'
+pod 'BaseViewSwift', '~> 1.0.0'
 ```
 
 Then, run the following command:
