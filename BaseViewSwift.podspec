@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
   }
   spec.source = {
     :git => 'https://github.com/ustwo/baseview-swift.git',
-    :tag => spec.version
+    :tag => 'v1.0.0'
   }
   spec.ios.deployment_target = '8.3'
   spec.source_files = 'Sources/*.swift'
